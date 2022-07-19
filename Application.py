@@ -85,7 +85,7 @@ with modeling :
 
     if btn_predict :
         st.header("Prediction")
-        scaler = pickle.load(open("Kenan kurs/scaler_deep" , "rb"))
+        scaler = pickle.load(open("scaler_deep" , "rb"))
         model = tf.keras.models.load_model("Kenan kurs/Deep_Learning.h5")
         y_pred_proba = tf.squeeze(model.predict(scaler.transform(data)))
         y_pred = tf.math.round(model.predict(scaler.transform(data)))
